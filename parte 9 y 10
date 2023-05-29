@@ -1,0 +1,34 @@
+static void RetirarSedan()
+    {
+        Console.WriteLine("Ingrese el número del espacio a liberar (1-5):");
+        int numeroEspacio = Convert.ToInt32(Console.ReadLine()) - 1;
+
+        if (numeroEspacio >= 0 && numeroEspacio < estacionamientoSedan.Length)
+        {
+            if (estacionamientoSedan[numeroEspacio] == 1)
+            {
+                estacionamientoSedan[numeroEspacio] = 0;
+
+                TimeSpan tiempoTranscurrido = DateTime.Now - tiemposSedan[numeroEspacio];
+                double tiempoEstacionado = tiempoTranscurrido.TotalSeconds;
+                double totalAPagar = CalcularCobro(tiempoEstacionado);
+
+                Console.WriteLine("===============================================================================");
+                Console.WriteLine("HOLA " + nombre + ", su vehiculo: " + auto + " HA SIDO RETIRADO CORRECTAMENTE");
+                Console.WriteLine("Tiempo transcurrido: " + tiempoTranscurrido.ToString(@"hh\:mm\:ss"));
+                Console.WriteLine("Total a pagar: $" + totalAPagar);
+                Console.WriteLine("===============================================================================");
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("No hay carro tipo Sedan en el espacio especificado.");
+                Console.WriteLine();
+            }
+        }
+        else
+        {
+            Console.WriteLine("Número de espacio inválido.");
+            Console.WriteLine();
+        }
+    }
