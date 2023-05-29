@@ -77,8 +77,8 @@
             estacionamientoMotos[i] = 0;
         }
     }
-
-    static void MostrarEstacionamiento()
+     
+         static void MostrarEstacionamiento()
     {
         Console.WriteLine("Carros tipo Sedan:");
         for (int i = 0; i < estacionamientoSedan.Length; i++)
@@ -122,3 +122,4 @@
         }
         Console.WriteLine();
     }
+
