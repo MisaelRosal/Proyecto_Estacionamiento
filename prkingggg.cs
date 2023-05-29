@@ -49,3 +49,76 @@
         }
     }
 
+    static string ObtenerInformacionVehiculo()
+    {
+        Console.WriteLine("Ingrese el nombre del propietario:");
+        nombre = Console.ReadLine();
+
+        Console.WriteLine("Ingrese la marca del vehículo:");
+        auto = Console.ReadLine();
+
+        return "Propietario: " + nombre + ", Vehículo: " + auto;
+    }
+
+    static void InicializarEstacionamiento()
+    {
+        for (int i = 0; i < estacionamientoSedan.Length; i++)
+        {
+            estacionamientoSedan[i] = 0;
+        }
+
+        for (int i = 0; i < estacionamientoPickup.Length; i++)
+        {
+            estacionamientoPickup[i] = 0;
+        }
+
+        for (int i = 0; i < estacionamientoMotos.Length; i++)
+        {
+            estacionamientoMotos[i] = 0;
+        }
+    }
+
+    static void MostrarEstacionamiento()
+    {
+        Console.WriteLine("Carros tipo Sedan:");
+        for (int i = 0; i < estacionamientoSedan.Length; i++)
+        {
+            if (estacionamientoSedan[i] == 0)
+            {
+                Console.Write("* ");
+            }
+            else
+            {
+                Console.Write("X ");
+            }
+        }
+        Console.WriteLine();
+
+        Console.WriteLine("Carros tipo Pick Up:");
+        for (int i = 0; i < estacionamientoPickup.Length; i++)
+        {
+            if (estacionamientoPickup[i] == 0)
+            {
+                Console.Write("* ");
+            }
+            else
+            {
+                Console.Write("X ");
+            }
+        }
+        Console.WriteLine();
+
+        Console.WriteLine("Motos:");
+        for (int i = 0; i < estacionamientoMotos.Length; i++)
+        {
+            if (estacionamientoMotos[i] == 0)
+            {
+                Console.Write("* ");
+            }
+            else
+            {
+                Console.Write("X ");
+            }
+        }
+        Console.WriteLine();
+    }
