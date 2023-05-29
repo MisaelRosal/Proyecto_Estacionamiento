@@ -1,0 +1,59 @@
+static void IngresarSedan()
+    {
+        bool espacioDisponible = false;
+        for (int i = 0; i < estacionamientoSedan.Length; i++)
+        {
+            if (estacionamientoSedan[i] == 0)
+            {
+                estacionamientoSedan[i] = 1;
+                informacionSedan[i] = ObtenerInformacionVehiculo();
+                tiemposSedan[i] = DateTime.Now;
+                espacioDisponible = true;
+                break;
+            }
+        }
+
+        if (espacioDisponible)
+        {
+            Console.WriteLine("========================================");
+            Console.WriteLine("Carro tipo Sedan ingresado correctamente.");
+            Console.WriteLine("========================================");
+
+            Console.ReadLine();
+        }
+        else
+        {
+            Console.WriteLine("No hay espacio disponible para ingresar un carro tipo Sedan.");
+            Console.WriteLine();
+        }
+    }
+
+static void IngresarPickup()
+    {
+        bool espacioDisponible = false;
+        for (int i = 0; i < estacionamientoPickup.Length; i++)
+        {
+            if (estacionamientoPickup[i] == 0)
+            {
+                estacionamientoPickup[i] = 1;
+                informacionPickup[i] = ObtenerInformacionVehiculo();
+                tiemposPickup[i] = DateTime.Now;
+                espacioDisponible = true;
+                break;
+            }
+        }
+
+        if (espacioDisponible)
+        {
+            Console.WriteLine("==========================================");
+            Console.WriteLine("Carro tipo Pick Up ingresado correctamente.");
+            Console.WriteLine("==========================================");
+
+            Console.ReadLine();
+        }
+        else
+        {
+            Console.WriteLine("No hay espacio disponible para ingresar un carro tipo Pick Up.");
+            Console.WriteLine();
+        }
+    }
